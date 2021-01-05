@@ -16,7 +16,7 @@ cmd
     try {
       result = await createToken({
         secret: options.secret,
-        payload: options.payload,
+        payload: JSON.parse(options.payload),
       });
     } catch (err) {
       console.log('Signing failed.');

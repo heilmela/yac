@@ -6,11 +6,14 @@
     "yac": "bin/yac.js"
   },
   "directories": {
-    "bin": "./bin"
+    "test": "test"
   },
   "scripts": {
     "test": "test",
-    "build": "rimraf bin/ && babel ./src/ --out-dir bin/"
+    "build": "rimraf bin/ && babel ./src/ --out-dir bin/",
+    "preparepublish": "changelog",
+    "prepublish": "npm run build",
+    "pub": "npm run preparepublish && npm publish"
   },
   "repository": {
     "type": "git",
@@ -72,7 +75,5 @@
     "nyc": "^15.1.0",
     "prettier": "^2.1.2"
   },
-  "engines": {
-    "node": ">=8.9"
-  }
+  "main": "bin/yac.js"
 }
